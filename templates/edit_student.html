@@ -1,0 +1,32 @@
+<!-- reference from https://www.youtube.com/watch?v=xIkAEe0Rb8Q
+But the content has been improved and updated to the hw material.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% extends 'layout.html' %}
+    {% block body %}
+      <div class='row'>
+        <div class='col-5 mx-auto'>
+          <h3>Edit students</h3><hr>
+          <form method='post' action='{{url_for("edit_student",SID=datas.SID)}}'>
+            <div class='form-group'>
+              <label>Student Name</label>
+              <input type='text' name='name' required class='form-control' value='{{datas.name}}'>
+            </div>
+            <div class='form-group'>
+              <label>GRADE</label>
+              <input type='text' name='grade' required class='form-control' value='{{datas.grade}}'>
+            </div>
+            <input type='submit' value='Submit' class='btn btn-black'>
+          </form>
+        </div>
+      </div>
+    {% endblock %}
+
+  </body>
+</html>
